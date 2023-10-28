@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--google API font for local CSS-->
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Asset/style.css">
+    <!--title page-->
     <title>Welcome to web APIs quiz &#11088;</title>
 </head>
+
 <body>
     <header>
+        <!--Container for the header grid layout-->
         <div>
             <button class="BtnHallofFame" id="Hall-of-Fame">Hall of fame</button>
         </div>
         <div>
-            <p>Time Left: <span id="Time Left">_ _ _</span></p>
+            <p>Time Left: <span id="Time Left">60s</span></p>
         </div>
 
     </header>
     
-    <div id="main"> <!--Container for grid layout-->
+    <section>
+        <!--Container for the section grid layout-->
+        <div id="main">
         <div id="maintemplate">
+            <!--Container for the Introduction, final score, multiple choice, fill out/submit the initial-->   
             <p id="Questionaire">Are you a Web APIs savvy?</p>
-            <p id="Finalscore"></p>    
-
-
+            <p id="Finalscore"></p>   
+            <p id="Initial"></p>
+            <textarea id="Initialtext"></textarea> 
+            <button class="Btn" id="beginQuiz">Begin the quiz</button>
+            <button class="Btn" id="multipleChoice1"></button>
+            <button class="Btn" id="multipleChoice2"></button>
+            <button class="Btn" id="multipleChoice3"></button>
+            <button class="Btn" id="multipleChoice4"></button>
+            <button class="Btn" id="Submit"></button>
+        <!--Container for demonstrate whether the answer is right or wrong-->
         </div>
-    </div>
+        <div id="booleantemplate"></div>
+        <p id="booleantemplate"></p>
+        </div>
+    </section>
+
+    <script src="./Asset/script.js"></script>
 
 </body>
 </html>
