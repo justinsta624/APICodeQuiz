@@ -35,5 +35,5 @@ THEN I can save my initials and my score
 ## Screenshot of the website
 
 
-## live url of deployed website
-
+## Deployed Website
+This website is live at https://justinsta624.github.io/APICodeQuiz
