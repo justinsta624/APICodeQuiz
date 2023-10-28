@@ -2,23 +2,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url(./images/halloween.jpg);
-    background-size: cover; /* This property ensures the image covers the whole background */
 }
 
 body {
     font-family: 'Creepster', cursive; font-size: 36px;
-    font-size: 36px;
     color: #e11317;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-image: url(./images/halloween.jpg);
+    background-size: cover; /* This property ensures the image covers the whole background */
 }
 
 header {
     /* Use flex, wrap, space-between to align section for Hall-of-fame and Timer to adjusted by viewpoint */
+    font-family: 'Creepster', cursive; font-size: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     color: magenta;
+    list-style: none;
     height: 100px;
     padding-left: 30px;
     padding-right: 30px;
@@ -26,21 +27,17 @@ header {
 }
 
 .BtnHallofFame {
-    font-family: 'Creepster', cursive; font-size: 36px;
-    background-color: aliceblue;
+    font-family: 'Creepster', cursive; font-size: 50px;
+    background-color: rgb(13, 40, 64);
     color: magenta;
-    border-radius: 10px;
+    border-radius: 15px;
     border: 2px; outline: 2px;
-    text-decoration: solid;
 }
 
 .Btn {
-    font-family: 'Creepster', cursive; font-size: 36px;
+    font-family: 'Creepster', cursive; font-size: 15px;
     background-color: rgb(100, 67, 180);
     color: #e11317;
-    border-radius: 15px;
-    border: 2px; outline: 2px;
-    text-decoration: none;
 }
 
 #main {
@@ -55,11 +52,19 @@ header {
 /* Use grid layout to align body section */
 /* External source: https://www.w3schools.com/css/css_grid_item.asp, https://www.w3schools.com/css/css_grid_container.asp */
 #maintemplate {
-    font-family: 'Creepster', cursive; font-size: 20px;
+    font-family: 'Creepster', cursive; font-size: 36px;
     display: grid;
     grid-template-columns: repeat(2, 1fr) 2fr 1fr;
     grid-template-rows: repeat(10, 1fr);
     gap: 10px 10px;
+}
+
+#booleantemplate {
+    font-family: 'Creepster', cursive; font-size: 36px;
+    display: grid;
+    grid-template-columns: 4fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px 100px;
 }
 
 #Questionaire {
@@ -68,17 +73,91 @@ header {
     grid-column: 2 / span 2;
     grid-row: 1 / span 5;
     place-self: center;
-    font-size: 30px;
+    font-size: 50px;
 }
 
 #Finalscore {
     grid-column: 1 / span 2;
     grid-row: 6 / span 5;
-    font-size: 15px;
+    font-size: 25px;
 }
 
 #Initial {
     grid-column: 1 / span 1;
     grid-row: 7 / span 5;
-    font-size: 15px;
+    font-size: 25px;
+}
+
+#Initialtext {
+    grid-column: 2 / span 1;
+    grid-row: 7 / span 1;
+    font-size: 25px;
+    resize: none;
+}
+
+#BeginQuiz {
+    font-family: 'Creepster', cursive; font-size: 25px;
+    background-color: yellow;
+    color: black;
+    grid-column: 2 / span 2;
+    grid-row: 5 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 2px; outline: 2px;
+    place-self: center;
+}
+
+#Submit {
+    font-family: 'Creepster', cursive; font-size: 25px;
+    background-color: whitesmoke;
+    grid-column: 3 / span 1;
+    grid-row: 7 / span 1;
+    padding: 10px 10px 10px 10px;
+    border: 2px; outline: 2px;
+}
+
+#MultipleChoice1 {
+    font-family: 'Creepster', cursive; font-size: 25px;
+    background-color: lightskyblue;
+    grid-column: 1 / span 2;
+    grid-row: 6 / span 1;
+    padding: 10px 10px 10px 10px;
+    border: 2px; outline: 2px;
+    margin-left: 25px;
+}
+
+#MultipleChoice2 {
+    font-family: 'Creepster', cursive; font-size: 25px;
+    background-color: lightskyblue;
+    grid-column: 1 / span 2;
+    grid-row: 7 / span 1;
+    padding: 10px 10px 10px 10px;
+    border: 2px; outline: 2px;
+    margin-left: 25px;
+}
+
+#MultipleChoice3 {
+    font-family: 'Creepster', cursive; font-size: 25px;
+    background-color: lightskyblue;
+    grid-column: 1 / span 2;
+    grid-row: 8 / span 1;
+    padding: 10px 10px 10px 10px;
+    border: 2px; outline: 2px;
+    margin-left: 25px;
+}
+
+#MultipleChoice4 {
+    font-family: 'Creepster', cursive; font-size: 25px;
+    background-color: lightskyblue;
+    grid-column: 1 / span 2;
+    grid-row: 9 / span 1;
+    padding: 10px 10px 10px 10px;
+    border: 2px; outline: 2px;
+    margin-left: 25px;
+}
+
+#boolean {
+    text-align: left;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 2;
 }
