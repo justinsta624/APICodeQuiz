@@ -8,8 +8,9 @@ body {
     font-family: 'Creepster', cursive; font-size: 36px;
     color: #e11317;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* image with Halloween theme covers the whole background */
     background-image: url(./images/halloween.jpg);
-    background-size: cover; /* This property ensures the image covers the whole background */
+    background-size: cover;
 }
 
 header {
@@ -25,7 +26,7 @@ header {
     padding-right: 30px;
     padding-top: 30px;
 }
-
+    /* Indicate the best record by using local storage */
 .BtnHallofFame {
     font-family: 'Creepster', cursive; font-size: 50px;
     background-color: rgb(13, 40, 64);
@@ -55,10 +56,10 @@ header {
     font-family: 'Creepster', cursive; font-size: 36px;
     display: grid;
     grid-template-columns: repeat(2, 1fr) 2fr 1fr;
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: repeat(9, 1fr);
     gap: 10px 10px;
 }
-
+/* Indicates whether the answer listed is correct or not */
 #booleantemplate {
     font-family: 'Creepster', cursive; font-size: 36px;
     display: grid;
@@ -66,22 +67,21 @@ header {
     grid-template-rows: repeat(2, 1fr);
     gap: 10px 100px;
 }
-
-#Questionaire {
+/* Opening line for the game */
+#Introduction {
     text-align: center;
-    align-self: baseline;
     grid-column: 2 / span 2;
-    grid-row: 1 / span 5;
+    grid-row: 1 / span 2;
     place-self: center;
     font-size: 50px;
 }
-
+/* Indicates the final score of the game */
 #Finalscore {
     grid-column: 1 / span 2;
     grid-row: 6 / span 5;
     font-size: 25px;
 }
-
+/* textbox to fill the player's initial */
 #Initial {
     grid-column: 1 / span 1;
     grid-row: 7 / span 5;
@@ -94,33 +94,34 @@ header {
     font-size: 25px;
     resize: none;
 }
-
+/* Button to commence the game */
 #BeginQuiz {
     font-family: 'Creepster', cursive; font-size: 25px;
     background-color: yellow;
     color: black;
     grid-column: 2 / span 2;
-    grid-row: 5 / span 1;
+    grid-row: 3 / span 1;
     padding: 10px 10px 10px 10px;
     border-radius: 10%;
     border: 2px; outline: 2px;
     place-self: center;
 }
-
+/* Button to submit the player's initial */
 #Submit {
     font-family: 'Creepster', cursive; font-size: 25px;
     background-color: whitesmoke;
     grid-column: 3 / span 1;
-    grid-row: 7 / span 1;
+    grid-row: 6 / span 1;
     padding: 10px 10px 10px 10px;
+    border-radius: 15px;
     border: 2px; outline: 2px;
 }
-
+/* Button to indicate 4 Choices for answer */
 #MultipleChoice1 {
     font-family: 'Creepster', cursive; font-size: 25px;
     background-color: lightskyblue;
     grid-column: 1 / span 2;
-    grid-row: 6 / span 1;
+    grid-row: 5 / span 1;
     padding: 10px 10px 10px 10px;
     border: 2px; outline: 2px;
     margin-left: 25px;
@@ -130,7 +131,7 @@ header {
     font-family: 'Creepster', cursive; font-size: 25px;
     background-color: lightskyblue;
     grid-column: 1 / span 2;
-    grid-row: 7 / span 1;
+    grid-row: 6 / span 1;
     padding: 10px 10px 10px 10px;
     border: 2px; outline: 2px;
     margin-left: 25px;
@@ -140,7 +141,7 @@ header {
     font-family: 'Creepster', cursive; font-size: 25px;
     background-color: lightskyblue;
     grid-column: 1 / span 2;
-    grid-row: 8 / span 1;
+    grid-row: 7 / span 1;
     padding: 10px 10px 10px 10px;
     border: 2px; outline: 2px;
     margin-left: 25px;
@@ -150,14 +151,26 @@ header {
     font-family: 'Creepster', cursive; font-size: 25px;
     background-color: lightskyblue;
     grid-column: 1 / span 2;
-    grid-row: 9 / span 1;
+    grid-row: 8 / span 1;
     padding: 10px 10px 10px 10px;
     border: 2px; outline: 2px;
     margin-left: 25px;
 }
-
+/* Indicates whether the answer listed is correct or not */
 #boolean {
     text-align: left;
     grid-column: 1 / span 4;
     grid-row: 1 / span 2;
+}
+/* Resize screen under 1200px will apply following condition */
+@media screen and (max-width: 1200px) {
+    header {
+        background-color: red;
+    }
+}
+/* Resize screen under 830px will apply following condition */
+@media screen and (max-width: 830px) {
+    #maintemplate {
+        background-color: green;
+    }
 }
