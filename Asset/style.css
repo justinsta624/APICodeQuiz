@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-image: url(./images/halloween.jpg);
+    background-size: cover; /* This property ensures the image covers the whole background */
 }
 
 body {
@@ -9,4 +11,26 @@ body {
     font-size: 36px;
     color: #ff6600;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    /* Use flex, space-between to display Hall-of-fame and Timer to adjusted by viewpoint */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: magenta;
+    height: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.BtnHallofFame {
+    border-radius: 10px;
+    background-color: aliceblue;
+    text-decoration: solid;
+    border: 0;
+    outline: 0;
+    color: magenta;
+    font-family: 'Creepster', cursive; font-size: 36px;
 }
