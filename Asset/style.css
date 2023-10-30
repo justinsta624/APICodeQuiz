@@ -35,10 +35,15 @@ header {
     border: 2px; outline: 2px;
 }
 
+.BtnHallofFame:hover {
+    background-color: aquamarine;
+}
+
 .Btn {
     font-family: 'Creepster', cursive; font-size: 15px;
     background-color: rgb(100, 67, 180);
     color: #e11317;
+    border-radius: 15px;
 }
 
 #main {
@@ -71,26 +76,26 @@ header {
 #Introduction {
     text-align: center;
     grid-column: 2 / span 2;
-    grid-row: 1 / span 2;
+    grid-row: 1 / span 5;
     place-self: center;
     font-size: 50px;
 }
 /* Indicates the final score of the game */
 #Finalscore {
     grid-column: 1 / span 2;
-    grid-row: 6 / span 5;
+    grid-row: 5 / span 1;
     font-size: 25px;
 }
 /* textbox to fill the player's initial */
 #Initial {
     grid-column: 1 / span 1;
-    grid-row: 7 / span 5;
+    grid-row: 6 / span 1;
     font-size: 25px;
 }
 
 #Initialtext {
     grid-column: 2 / span 1;
-    grid-row: 7 / span 1;
+    grid-row: 6 / span 1;
     font-size: 25px;
     resize: none;
 }
@@ -100,22 +105,13 @@ header {
     background-color: yellow;
     color: black;
     grid-column: 2 / span 2;
-    grid-row: 3 / span 1;
+    grid-row: 5 / span 1;
     padding: 10px 10px 10px 10px;
     border-radius: 10%;
     border: 2px; outline: 2px;
     place-self: center;
 }
-/* Button to submit the player's initial */
-#Submit {
-    font-family: 'Creepster', cursive; font-size: 25px;
-    background-color: whitesmoke;
-    grid-column: 3 / span 1;
-    grid-row: 6 / span 1;
-    padding: 10px 10px 10px 10px;
-    border-radius: 15px;
-    border: 2px; outline: 2px;
-}
+
 /* Button to indicate 4 Choices for answer */
 #MultipleChoice1 {
     font-family: 'Creepster', cursive; font-size: 25px;
@@ -156,8 +152,20 @@ header {
     border: 2px; outline: 2px;
     margin-left: 25px;
 }
+
+/* Button to submit the player's initial */
+#Submit {
+    font-family: 'Creepster', cursive; font-size: 25px;
+    background-color: whitesmoke;
+    grid-column: 3 / span 1;
+    grid-row: 7 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 15px;
+    border: 2px; outline: 2px;
+}
+
 /* Indicates whether the answer listed is correct or not */
-#boolean {
+#booleanvalue {
     text-align: left;
     grid-column: 1 / span 4;
     grid-row: 1 / span 2;
