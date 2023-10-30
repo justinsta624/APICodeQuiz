@@ -227,7 +227,6 @@ BeginQuizBtnEl.addEventListener("click", function() {
             
         if (answerNumber === 6) { 
             // code for game over
-            console.log ("gameover");
             MultipleChoice1BtnEl.style.display = 'none';
             MultipleChoice2BtnEl.style.display = 'none';
             MultipleChoice3BtnEl.style.display = 'none';
@@ -248,7 +247,6 @@ BeginQuizBtnEl.addEventListener("click", function() {
             return BestScore;
         }   
 
-            console.log (answerNumber);
 
             MultipleChoice1BtnEl.textContent = answersContents.answers[answerNumber][1];
             MultipleChoice2BtnEl.textContent = answersContents.answers[answerNumber][2];
@@ -260,315 +258,347 @@ BeginQuizBtnEl.addEventListener("click", function() {
             maintemplate.appendChild(Finalscore);
             TimeRemaining -= 1;
             TimeLeft.textContent = TimeRemaining;
-            console.log("TimeLeft:" + TimeRemaining)
 
-            MultipleChoice1BtnEl.addEventListener("click", function() {
-
-                if (questionNumber ==4 && MultipleChoice1BtnEl.textContent === "Parentheses") {
+            MultipleChoice1BtnEl.addEventListener("click", function(event) {
+                if (event.target.textContent === correctanswer[questionNumber]) {
+                    // code for correct answer
                     console.log("Correct");
-                    booleanvalue.style.display=""; // Enables text content on correct and wrong answers
-                    booleanvalue.textContent = "Correct!"
-                    booleanvalue.style.borderTop = "solid #663399";
-                    booleantemplate.appendChild(booleanvalue);
-                    //window.alert("Game Over"); Game is over at this point.
-                    // questionNumber = 0; // Game is over, no more questions to show.
-                    // answerNumber = 0; // Game is over, no more answers to show.
-                    console.log("I'm here" + timeInterval);
-                    MultipleChoice1BtnEl.style.display = 'none';
-                    MultipleChoice2BtnEl.style.display = 'none';
-                    MultipleChoice3BtnEl.style.display = 'none';
-                    MultipleChoice4BtnEl.style.display = 'none';
-                    booleanvalue.style.display='none';
-                    BeginQuizBtnEl.style.display = 'none';
-                    Introduction.textContent = "You have finished the quiz!";
-                    Finalscore.style.display = ""; // Allow display for final score
-                    Initial.style.display = ""; // Display Message Enter initials
-                    Initialtext.style.display="";  // Capture user score once submitted is clicked.
-                    finalCheck = 1;
-                    lastQuestionWrong();
-                    Finalscore.textContent = "Your final score is: " + BestScore; // Assign the latest high score.
-                    Initial.textContent = "Enter initials:"
-                    SubmitEl.style.display = "";
-                    SubmitEl.textContent = "Submit";      
-                    clearInterval(timeInterval);  
-                }
-                     
-                else {
-                    //Assign wrong values based incorrect answers.
-                    switch(MultipleChoice1BtnEl.textContent) {
-                        case "Atmospheric Pressure Ionization":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1;
-                            // questionNumber = 1;
-                            // answerNumber = 1;
-                            break;
-                        case "Cascading Style Sheets":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1;
-                            // questionNumber = 2; 
-                            // answerNumber = 1;
-                            break;
-                        case "Booleans":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1; 
-                            // questionNumber = 4; 
-                            // answerNumber = 1;
-                            clearInterval(timeInterval);
-                            break;
-                        default: console.log ("notfound");
-                    }
-                }
-                questionNumber ++
-                answerNumber ++
-            });
-
-            MultipleChoice2BtnEl.addEventListener("click", function() {
-
-                if (questionNumber ==2 && MultipleChoice2BtnEl.textContent === "Document Object Model") {
-                    console.log("Correct");
-                    // questionNumber = 1;
-                    // answerNumber = 2;
                     booleanvalue.style.display="";
                     booleanvalue.textContent = "Correct!";
                     booleanvalue.style.borderTop = "solid #663399";
-                    booleantemplate.appendChild(booleanvalue);                
+                    booleantemplate.appendChild(booleanvalue);
                 } 
-                
                 else {
-                    switch(MultipleChoice2BtnEl.textContent) {
-                        case "Academic Performance Index":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1;
-                            // questionNumber = 1;
-                            // answerNumber = 2;
-                            break;
-                        case "event.preventDefault":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1; 
-                            // questionNumber = 3; 
-                            // answerNumber = 2;
-                            console.log(score);
-                            break;
-                        case "querySelector":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1; 
-                            // questionNumber = 3; 
-                            // answerNumber = 2;
-                            break;
-                        case "Quotes":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1; 
-                            // questionNumber = 0; // Game is over
-                            // answerNumber = 0; // Game is over
-                            console.log("I'm here" + timeInterval);
-                            MultipleChoice1BtnEl.style.display = 'none';
-                            MultipleChoice2BtnEl.style.display = 'none';
-                            MultipleChoice3BtnEl.style.display = 'none';
-                            MultipleChoice4BtnEl.style.display = 'none';
-                            booleanvalue.style.display='none';
-                            BeginQuizBtnEl.style.display = 'none';
-                            Introduction.textContent = "You have finished the quiz!";
-                            Finalscore.style.display = ""; // Allow display for final score
-                            Initial.style.display = ""; // Display Message Enter initials
-                            Initialtext.style.display="";  // Capture user score once submitted is clicked.
-                            finalCheck = 1;
-                            lastQuestionWrong();
-                            Finalscore.textContent = "Your final score is: " + BestScore; // Assign the latest high score.
-                            Initial.textContent = "Enter initials:"
-                            SubmitEl.style.display = "";
-                            SubmitEl.textContent = "Submit";      
-                            clearInterval(timeInterval);     
-                            break;           
-                    }
-                 }
-                 questionNumber ++
-                 answerNumber ++
-
-            });
-
-            MultipleChoice3BtnEl.addEventListener("click", function() {
-
-                if (questionNumber ==1 && MultipleChoice3BtnEl.textContent === "Application Programming Interface") {
-                    console.log("Correct");
-                    // questionNumber = 1;
-                    // answerNumber = 3;
+                    // code for wrong answer
+                    console.log("Inside the case now");
                     booleanvalue.style.display="";
-                    booleanvalue.textContent = "Correct!";
+                    booleanvalue.textContent = "Wrong!";
                     booleanvalue.style.borderTop = "solid #663399";
-                    booleantemplate.appendChild(booleanvalue);
-                    
-                }
-                
-                else {
-
-                    switch(MultipleChoice3BtnEl.textContent) {
-                        case "Python":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1; // Give user a 10+ score
-                            // questionNumber = 2; // Move to the next question which is the second question
-                            // answerNumber = 3;
-                            break;
-                        case "event.stopPropagation":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1; // Give user a 10+ score
-                            // questionNumber = 3; // Move to the next question which is the second question
-                            // answerNumber = 3;
-                            break;
-                        case "getElement":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1; // Give user a 10+ score
-                            // questionNumber = 4; // Move to the next question which is the second question
-                            // answerNumber = 3;
-                            break;                            
-                        case "Curly brackets":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1; // Give user a 10+ score
-                            //questionNumber = 4; // Move to the next question which is the second question
-                            //answerNumber = 3;
-                            // questionNumber = 0; // Game is over, no more questions to show.
-                            // answerNumber = 0; // Game is over, no more answers to show.
-                            console.log("I'm here" + timeInterval);
-                            MultipleChoice1BtnEl.style.display = 'none';
-                            MultipleChoice2BtnEl.style.display = 'none';
-                            MultipleChoice3BtnEl.style.display = 'none';
-                            MultipleChoice4BtnEl.style.display = 'none';
-                            booleanvalue.style.display='none';
-                            BeginQuizBtnEl.style.display = 'none';
-                            Introduction.textContent = "You have finished the quiz!";
-                            Finalscore.style.display = ""; // Allow display for final score
-                            Initial.style.display = ""; // Display Message Enter initials
-                            Initialtext.style.display="";  // Capture user score once submitted is clicked.
-                            finalCheck = 1;
-                            lastQuestionWrong();
-                            Finalscore.textContent = "Your final score is: " + BestScore; // Assign the latest high score.
-                            Initial.textContent = "Enter initials:"
-                            SubmitEl.style.display = "";
-                            SubmitEl.textContent = "Submit";      
-                            clearInterval(timeInterval);
-                            break;                         
-                    }
-
+                    score = 1;
                 }
                 questionNumber ++
                 answerNumber ++
-            });
+             })
 
-            MultipleChoice4BtnEl.addEventListener("click", function() {
-
-                if (questionNumber ==3 && MultipleChoice4BtnEl.textContent === "localStorage") {
+             MultipleChoice2BtnEl.addEventListener("click", function(event) {
+                if (event.target.textContent === correctanswer[questionNumber]) {
+                    // code for correct answer
                     console.log("Correct");
-                    // questionNumber = 4;
-                    // answerNumber = 4;
                     booleanvalue.style.display="";
                     booleanvalue.textContent = "Correct!";
                     booleanvalue.style.borderTop = "solid #663399";
                     booleantemplate.appendChild(booleanvalue);
-
-                } else {
-
-                    switch(MultipleChoice4BtnEl.textContent) {
-                        case "Advanced Primer Ignition":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1; 
-                            // questionNumber = 1; 
-                            // answerNumber = 4;
-                            break;
-                        case "Bootstrap":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1; 
-                            // questionNumber = 2; 
-                            // answerNumber = 4;
-                            break;
-                        case "Console.log":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1; 
-                            // questionNumber = 3; 
-                            // answerNumber = 4;
-                            break;
-                        case "Exclamation mark":
-                            console.log("Inside the case now");
-                            booleanvalue.style.display="";
-                            booleanvalue.textContent = "Wrong!";
-                            booleanvalue.style.borderTop = "solid #663399";
-                            score = 1; 
-                            // questionNumber = 0; // Game is over, no more questions to show.
-                            // answerNumber = 0; // Game is over, no more answers to show.
-                            console.log("I'm here" + timeInterval);
-                            MultipleChoice1BtnEl.style.display = 'none';
-                            MultipleChoice2BtnEl.style.display = 'none';
-                            MultipleChoice3BtnEl.style.display = 'none';
-                            MultipleChoice4BtnEl.style.display = 'none';
-                            booleanvalue.style.display='none';
-                            BeginQuizBtnEl.style.display = 'none';
-                            Introduction.textContent = "You have finished the quiz!";
-                            Finalscore.style.display = ""; // Allow display for final score
-                            Initial.style.display = ""; // Display Message Enter initials
-                            Initialtext.style.display="";  // Capture user score once submitted is clicked.
-                            finalCheck = 1;
-                            lastQuestionWrong();
-                            Finalscore.textContent = "Your final score is: " + BestScore; // Assign the latest high score.
-                            Initial.textContent = "Enter initials:"
-                            SubmitEl.style.display = "";
-                            SubmitEl.textContent = "Submit";      
-                            clearInterval(timeInterval);  
-                            break;
-                            default: console.log ("answernotfound");
-                        
-                    }
-                 
+                } 
+                else {
+                    // code for wrong answer
+                    console.log("Inside the case now");
+                    booleanvalue.style.display="";
+                    booleanvalue.textContent = "Wrong!";
+                    booleanvalue.style.borderTop = "solid #663399";
+                    score = 1;
                 }
                 questionNumber ++
-                answerNumber ++ 
-            });
+                answerNumber ++
+             })
+
+             MultipleChoice3BtnEl.addEventListener("click", function(event) {
+                if (event.target.textContent === correctanswer[questionNumber]) {
+                    // code for correct answer
+                    console.log("Correct");
+                    booleanvalue.style.display="";
+                    booleanvalue.textContent = "Correct!";
+                    booleanvalue.style.borderTop = "solid #663399";
+                    booleantemplate.appendChild(booleanvalue);
+                } 
+                else {
+                    // code for wrong answer
+                    console.log("Wrong");
+                    booleanvalue.style.display="";
+                    booleanvalue.textContent = "Wrong!";
+                    booleanvalue.style.borderTop = "solid #663399";
+                    score = 1;
+                }
+                questionNumber ++
+                answerNumber ++
+             })
+
+             MultipleChoice4BtnEl.addEventListener("click", function(event) {
+                if (event.target.textContent === correctanswer[questionNumber]) {
+                    // code for correct answer
+                    console.log("Correct");
+                    booleanvalue.style.display="";
+                    booleanvalue.textContent = "Correct!";
+                    booleanvalue.style.borderTop = "solid #663399";
+                    booleantemplate.appendChild(booleanvalue);
+                } 
+                else {
+                    // code for wrong answer
+                    console.log("Inside the case now");
+                    booleanvalue.style.display="";
+                    booleanvalue.textContent = "Wrong!";
+                    booleanvalue.style.borderTop = "solid #663399";
+                    score = 1;
+                }
+                questionNumber ++
+                answerNumber ++
+             })
+
+            // MultipleChoice1BtnEl.addEventListener("click", function() {
+
+            //     if (questionNumber ==4 && MultipleChoice1BtnEl.textContent === "Parentheses") {
+            //         booleanvalue.style.display=""; // Enables text content on correct and wrong answers
+            //         booleanvalue.textContent = "Correct!"
+            //         booleanvalue.style.borderTop = "solid #663399";
+            //         booleantemplate.appendChild(booleanvalue);
+            //         MultipleChoice1BtnEl.style.display = 'none';
+            //         MultipleChoice2BtnEl.style.display = 'none';
+            //         MultipleChoice3BtnEl.style.display = 'none';
+            //         MultipleChoice4BtnEl.style.display = 'none';
+            //         booleanvalue.style.display='none';
+            //         BeginQuizBtnEl.style.display = 'none';
+            //         Introduction.textContent = "You have finished the quiz!";
+            //         Finalscore.style.display = ""; // Allow display for final score
+            //         Initial.style.display = ""; // Display Message Enter initials
+            //         Initialtext.style.display="";  // Capture user score once submitted is clicked.
+            //         finalCheck = 1;
+                  
+            //         lastQuestionWrong();
+            //         Finalscore.textContent = "Your final score is: " + BestScore; // Assign the latest high score.
+            //         Initial.textContent = "Enter initials:"
+            //         SubmitEl.style.display = "";
+            //         SubmitEl.textContent = "Submit";      
+            //         clearInterval(timeInterval);  
+            //     }
+                     
+            //     else {
+            //         //Assign wrong values based incorrect answers.
+            //         switch(MultipleChoice1BtnEl.textContent) {
+            //             case "Atmospheric Pressure Ionization":
+            //                 booleanvalue.style.display="";
+            //                 booleanvalue.textContent = "Wrong!";
+            //                 booleanvalue.style.borderTop = "solid #663399";
+            //                 score = 1;
+            //                 // questionNumber = 1;
+            //                 // answerNumber = 1;
+            //                 break;
+            //             case "Cascading Style Sheets":
+            //                 booleanvalue.style.display="";
+            //                 booleanvalue.textContent = "Wrong!";
+            //                 booleanvalue.style.borderTop = "solid #663399";
+            //                 score = 1;
+            //                 // questionNumber = 2; 
+            //                 // answerNumber = 1;
+            //                 break;
+            //             case "Booleans":
+            //                 booleanvalue.style.display="";
+            //                 booleanvalue.textContent = "Wrong!";
+            //                 booleanvalue.style.borderTop = "solid #663399";
+            //                 score = 1; 
+            //                 // questionNumber = 3; 
+            //                 // answerNumber = 1;
+            //                 clearInterval(timeInterval);
+            //                 break;
+            //             default: console.log ("notfound");
+            //         }
+            //     }
+            //     questionNumber ++
+            //     answerNumber ++
+            // });
+
+            // MultipleChoice2BtnEl.addEventListener("click", function() {
+
+            //     if (questionNumber ==2 && MultipleChoice2BtnEl.textContent === "Document Object Model") {
+            //         // questionNumber = 2;
+            //         // answerNumber = 2;
+            //         booleanvalue.style.display="";
+            //         booleanvalue.textContent = "Correct!";
+            //         booleanvalue.style.borderTop = "solid #663399";
+            //         booleantemplate.appendChild(booleanvalue);      
+            //     } 
+                
+            //     else {
+            //         switch(MultipleChoice2BtnEl.textContent) {
+            //             case "Academic Performance Index":
+            //                 booleanvalue.style.display="";
+            //                 booleanvalue.textContent = "Wrong!";
+            //                 booleanvalue.style.borderTop = "solid #663399";
+            //                 score = 1;
+            //                 // questionNumber = 1;
+            //                 // answerNumber = 2;
+            //                 break;
+            //             case "querySelector":
+            //                 booleanvalue.style.display="";
+            //                 booleanvalue.textContent = "Wrong!";
+            //                 booleanvalue.style.borderTop = "solid #663399";
+            //                 score = 1; 
+            //                 // questionNumber = 3; 
+            //                 // answerNumber = 2;
+            //                 break;
+            //             case "Quotes":
+            //                 booleanvalue.style.display="";
+            //                 booleanvalue.textContent = "Wrong!";
+            //                 booleanvalue.style.borderTop = "solid #663399";
+            //                 score = 1; 
+            //                 // questionNumber = 4;
+            //                 // answerNumber = 2;
+            //                 MultipleChoice1BtnEl.style.display = 'none';
+            //                 MultipleChoice2BtnEl.style.display = 'none';
+            //                 MultipleChoice3BtnEl.style.display = 'none';
+            //                 MultipleChoice4BtnEl.style.display = 'none';
+            //                 booleanvalue.style.display='none';
+            //                 BeginQuizBtnEl.style.display = 'none';
+            //                 Introduction.textContent = "You have finished the quiz!";
+            //                 Finalscore.style.display = ""; // Allow display for final score
+            //                 Initial.style.display = ""; // Display Message Enter initials
+            //                 Initialtext.style.display="";  // Capture user score once submitted is clicked.
+            //                 finalCheck = 1;
+            //                 lastQuestionWrong();
+            //                 Finalscore.textContent = "Your final score is: " + BestScore; // Assign the latest high score.
+            //                 Initial.textContent = "Enter initials:"
+            //                 SubmitEl.style.display = "";
+            //                 SubmitEl.textContent = "Submit";      
+            //                 clearInterval(timeInterval);     
+            //                 break;      
+            //             default: console.log ("notfound");     
+            //         }
+            //      }
+            //      questionNumber ++
+            //      answerNumber ++
+
+            // });
+
+            // MultipleChoice3BtnEl.addEventListener("click", function() {
+
+            //     if (questionNumber ==1 && MultipleChoice3BtnEl.textContent === "Application Programming Interface") {
+            //         // questionNumber = 1;
+            //         // answerNumber = 3;
+            //         booleanvalue.style.display="";
+            //         booleanvalue.textContent = "Correct!";
+            //         booleanvalue.style.borderTop = "solid #663399";
+            //         booleantemplate.appendChild(booleanvalue);                    
+            //     }
+                
+            //     else {
+
+            //         switch(MultipleChoice3BtnEl.textContent) {
+            //             case "Python":
+            //                 booleanvalue.style.display="";
+            //                 booleanvalue.textContent = "Wrong!";
+            //                 booleanvalue.style.borderTop = "solid #663399";
+            //                 score = 1;
+            //                 // questionNumber = 2;
+            //                 // answerNumber = 3;
+            //                 break;
+            //             case "getElement":
+            //                 booleanvalue.style.display="";
+            //                 booleanvalue.textContent = "Wrong!";
+            //                 booleanvalue.style.borderTop = "solid #663399";
+            //                 score = 1;
+            //                 // questionNumber = 3;
+            //                 // answerNumber = 3;
+            //                 break;                            
+            //             case "Curly brackets":
+            //                 booleanvalue.style.display="";
+            //                 booleanvalue.textContent = "Wrong!";
+            //                 booleanvalue.style.borderTop = "solid #663399";
+            //                 score = 1;
+            //                 //questionNumber = 4; 
+            //                 //answerNumber = 3;
+            //                 MultipleChoice1BtnEl.style.display = 'none';
+            //                 MultipleChoice2BtnEl.style.display = 'none';
+            //                 MultipleChoice3BtnEl.style.display = 'none';
+            //                 MultipleChoice4BtnEl.style.display = 'none';
+            //                 booleanvalue.style.display='none';
+            //                 BeginQuizBtnEl.style.display = 'none';
+            //                 Introduction.textContent = "You have finished the quiz!";
+            //                 Finalscore.style.display = ""; // Allow display for final score
+            //                 Initial.style.display = ""; // Display Message Enter initials
+            //                 Initialtext.style.display="";  // Capture user score once submitted is clicked.
+            //                 finalCheck = 1;
+            //                 lastQuestionWrong();
+            //                 Finalscore.textContent = "Your final score is: " + BestScore; // Assign the latest high score.
+            //                 Initial.textContent = "Enter initials:"
+            //                 SubmitEl.style.display = "";
+            //                 SubmitEl.textContent = "Submit";      
+            //                 clearInterval(timeInterval);
+            //                 break;      
+            //             default: console.log ("notfound");                   
+            //         }
+
+            //     }
+            //     questionNumber ++
+            //     answerNumber ++
+            // });
+
+            // MultipleChoice4BtnEl.addEventListener("click", function() {
+
+            //     if (questionNumber ==3 && MultipleChoice4BtnEl.textContent === "localStorage") {
+            //         // questionNumber = 3;
+            //         // answerNumber = 4;
+            //         booleanvalue.style.display="";
+            //         booleanvalue.textContent = "Correct!";
+            //         booleanvalue.style.borderTop = "solid #663399";
+            //         booleantemplate.appendChild(booleanvalue);
+            //     } 
+
+            //     else {
+
+            //         switch(MultipleChoice4BtnEl.textContent) {
+            //             case "Advanced Primer Ignition":
+            //                 booleanvalue.style.display="";
+            //                 booleanvalue.textContent = "Wrong!";
+            //                 booleanvalue.style.borderTop = "solid #663399";
+            //                 score = 1; 
+            //                 // questionNumber = 1; 
+            //                 // answerNumber = 4;
+            //                 break;
+            //             case "Bootstrap":
+            //                 booleanvalue.style.display="";
+            //                 booleanvalue.textContent = "Wrong!";
+            //                 booleanvalue.style.borderTop = "solid #663399";
+            //                 score = 1; 
+            //                 // questionNumber = 2; 
+            //                 // answerNumber = 4;
+            //                 break;
+            //             case "Exclamation mark":
+            //                 console.log("Inside the case now");
+            //                 booleanvalue.style.display="";
+            //                 booleanvalue.textContent = "Wrong!";
+            //                 booleanvalue.style.borderTop = "solid #663399";
+            //                 score = 1; 
+            //                 // questionNumber = 4; // Game is over, no more questions to show.
+            //                 // answerNumber = 4; // Game is over, no more answers to show.
+            //                 console.log("I'm here" + timeInterval);
+            //                 MultipleChoice1BtnEl.style.display = 'none';
+            //                 MultipleChoice2BtnEl.style.display = 'none';
+            //                 MultipleChoice3BtnEl.style.display = 'none';
+            //                 MultipleChoice4BtnEl.style.display = 'none';
+            //                 booleanvalue.style.display='none';
+            //                 BeginQuizBtnEl.style.display = 'none';
+            //                 Introduction.textContent = "You have finished the quiz!";
+            //                 Finalscore.style.display = ""; // Allow display for final score
+            //                 Initial.style.display = ""; // Display Message Enter initials
+            //                 Initialtext.style.display="";  // Capture user score once submitted is clicked.
+            //                 finalCheck = 1;
+            //                 lastQuestionWrong();
+            //                 Finalscore.textContent = "Your final score is: " + BestScore; // Assign the latest high score.
+            //                 Initial.textContent = "Enter initials:"
+            //                 SubmitEl.style.display = "";
+            //                 SubmitEl.textContent = "Submit";      
+            //                 clearInterval(timeInterval);  
+            //                 break;
+            //             default: console.log ("notfound");
+            //     }
+                 
+            //     }
+            //     questionNumber ++
+            //     answerNumber ++ 
+            // });
 
         }
         else if(TimeRemaining === 0){
 
           console.log("I'm here" + timeInterval);
-        //   questionNumber = 0; // Reset all questions
-        //   answerNumber = 0; // Reset all possible answers.
           MultipleChoice1BtnEl.style.display = 'none';
           MultipleChoice2BtnEl.style.display = 'none';
           MultipleChoice3BtnEl.style.display = 'none';
