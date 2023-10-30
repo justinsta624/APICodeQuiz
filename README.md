@@ -32,7 +32,8 @@ WHEN the game is over
 THEN I can save my initials and my score
 ```
 
-## Screenshot of the website
+## Screenshot
+![image](https://github.com/justinsta624/APICodeQuiz/assets/143357899/abcdfd6e-7d80-4377-a455-8d90ef9b75b9)
 
 
 ## Deployed Website
