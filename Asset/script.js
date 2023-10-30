@@ -20,8 +20,8 @@ var Finalscore = document.getElementById("Finalscore"); // Display score from HT
 var Initial = document.getElementById("Initial"); // Enter initials from HTML
 var Initialtext = document.getElementById("Initialtext"); // TextArea from HTML
 
-const HallofFameBtnEl = document.getElementById('Hall-of-Fame'); // Hall of Fame Btn El
-const BeginQuizBtnEl = document.getElementById('BeginQuiz'); // Begin the Quiz Btn El
+var HallofFameBtnEl = document.getElementById('Hall-of-Fame'); // Hall of Fame Btn El
+var BeginQuizBtnEl = document.getElementById('BeginQuiz'); // Begin the Quiz Btn El
 
 // Do not display anything that is not ready to be displayed
 MultipleChoice1BtnEl.style.display = 'none';
@@ -37,9 +37,8 @@ var questionsContents = {
     correct: { 
         1 : "What does APIs stands for, when it comes to coding?",
         2 : "In APIs, what allow us to use JavaScript to interact with HTML?",
-        3 : "We can handle click events by using the following keyword:",
-        4 : "We can store data in the user's browser by using the following keyword:", 
-        5 : "JavaScript Strings must be enclosed with:"
+        3 : "We can store data in the user's browser by using the following keyword:", 
+        4 : "JavaScript Strings must be enclosed with:"
     }
 };
 
@@ -57,16 +56,11 @@ var answersContents = {
             3: "Python",
             4: "Bootstrap"},
         3 : {
-            1: "addEventListener",
-            2: "event.preventDefault",
-            3: "event.stopPropagation", 
-            4: "Console.log"},
-        4 : {
             1: "Booleans",
             2: "querySelector",
             3: "getElement", 
             4: "localStorage"},      
-        5 : {
+        4 : {
             1: "Parentheses",
             2: "Quotes",
             3: "Curly brackets",
@@ -77,9 +71,8 @@ var answersContents = {
 var correctanswer = {
     1: "Application Programming Interface",
     2: "Document Object Model",
-    3: "addEventListener",
-    4: "localStorage",
-    5: "Parentheses",
+    3: "localStorage",
+    4: "Parentheses",
 }
 
 //Initialize the display timer at default value
@@ -361,17 +354,7 @@ BeginQuizBtnEl.addEventListener("click", function() {
 
             MultipleChoice1BtnEl.addEventListener("click", function() {
 
-                if (questionNumber == 3 && MultipleChoice1BtnEl.textContent === "addEventListener") {
-                    console.log("Correct");
-                    // questionNumber = 2;
-                    // answerNumber = 1;
-                    booleanvalue.style.display="";
-                    booleanvalue.textContent = "Correct!";
-                    booleanvalue.style.borderTop = "solid #663399";
-                    booleantemplate.appendChild(booleanvalue);
-                }
-                
-                else if (questionNumber == 5 && MultipleChoice1BtnEl.textContent === "Parentheses") {
+                if (questionNumber ==4 && MultipleChoice1BtnEl.textContent === "Parentheses") {
                     console.log("Correct");
                     booleanvalue.style.display=""; // Enables text content on correct and wrong answers
                     booleanvalue.textContent = "Correct!"
@@ -440,7 +423,7 @@ BeginQuizBtnEl.addEventListener("click", function() {
 
             MultipleChoice2BtnEl.addEventListener("click", function() {
 
-                if (questionNumber == 2 && MultipleChoice2BtnEl.textContent === "Document Object Model") {
+                if (questionNumber ==2 && MultipleChoice2BtnEl.textContent === "Document Object Model") {
                     console.log("Correct");
                     // questionNumber = 1;
                     // answerNumber = 2;
@@ -505,7 +488,8 @@ BeginQuizBtnEl.addEventListener("click", function() {
                             Initial.textContent = "Enter initials:"
                             SubmitEl.style.display = "";
                             SubmitEl.textContent = "Submit";      
-                            clearInterval(timeInterval);              
+                            clearInterval(timeInterval);     
+                            break;           
                     }
                  }
                  questionNumber ++
@@ -515,7 +499,7 @@ BeginQuizBtnEl.addEventListener("click", function() {
 
             MultipleChoice3BtnEl.addEventListener("click", function() {
 
-                if (questionNumber == 1 && MultipleChoice3BtnEl.textContent === "Application Programming Interface") {
+                if (questionNumber ==1 && MultipleChoice3BtnEl.textContent === "Application Programming Interface") {
                     console.log("Correct");
                     // questionNumber = 1;
                     // answerNumber = 3;
@@ -583,7 +567,8 @@ BeginQuizBtnEl.addEventListener("click", function() {
                             Initial.textContent = "Enter initials:"
                             SubmitEl.style.display = "";
                             SubmitEl.textContent = "Submit";      
-                            clearInterval(timeInterval);                           
+                            clearInterval(timeInterval);
+                            break;                         
                     }
 
                 }
@@ -593,7 +578,7 @@ BeginQuizBtnEl.addEventListener("click", function() {
 
             MultipleChoice4BtnEl.addEventListener("click", function() {
 
-                if (questionNumber == 4 && MultipleChoice4BtnEl.textContent === "localStorage") {
+                if (questionNumber ==3 && MultipleChoice4BtnEl.textContent === "localStorage") {
                     console.log("Correct");
                     // questionNumber = 4;
                     // answerNumber = 4;
