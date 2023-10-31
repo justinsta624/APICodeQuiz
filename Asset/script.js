@@ -34,7 +34,7 @@ Initialtext.style.display='none';
 
 // Question objects
 var questionsContents = { 
-    correct: { 
+    questions: { 
         1 : "What does APIs stands for, when it comes to coding?",
         2 : "In APIs, what allow us to use JavaScript to interact with HTML?",
         3 : "We can handle click events by using the following keyword:",
@@ -210,7 +210,7 @@ BeginQuizBtnEl.addEventListener("click", function() {
         score = 0;         
 
         if(TimeRemaining >= 1 && finalCheck !== 1) {
-            Introduction.textContent = questionsContents.correct[questionNumber];
+            Introduction.textContent = questionsContents.questions[questionNumber];
 
             Introduction.style.display= ""; // Allow questions button to appear
             MultipleChoice1BtnEl.style.display = ""; // Allow answer buttons to appear
