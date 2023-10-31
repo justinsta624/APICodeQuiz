@@ -134,7 +134,7 @@ SubmitEl.addEventListener("click", function() { // Submit the best scores
    
         if (checkPlayers == null) { // new user
             localStorage.setItem(PlayersDetails, value);
-            window.alert("Your score " + BestScore + " has been submitted!")
+            window.alert(" Your score " + BestScore + " has been submitted! ")
             break;
         } else if (checkPlayers != null){
             TotalScore = checkPlayers.split(","); // Split since the object exist in local storage
@@ -145,25 +145,25 @@ SubmitEl.addEventListener("click", function() { // Submit the best scores
         // add to the storage if the current BestScore is higher, 
         // else let the user know they already have the BestScore
             localStorage.setItem(PlayersDetails, value);
-            window.alert(BestScore + " "+ "is the latest score by " + Initialtext.value + ". BestScore does not change.")
+            window.alert(BestScore + " "+ " is the latest score by " + Initialtext.value + ". BestScore does not change. ")
             break; 
         } else if (Initialtext.value == "") {
-            window.alert("Please enter the initial");
+            window.alert(" Please enter the initial ");
             break;
         } else if (PlayersDetails == TotalScore[0] && BestScore > TotalScore[1] ) { 
             // Current > Previous BestScore
             localStorage.setItem(PlayersDetails, value);
-            window.alert("The New BestScore of" + BestScore + "has been submitted!.\n Your previous score was" + TotalScore[1])
+            window.alert(" The New BestScore of " + BestScore + " has been submitted!.\n Your previous score was " + TotalScore[1])
             break; 
         } else if (PlayersDetails == TotalScore[0] && BestScore < TotalScore[1] ) { 
             // Current < Previous BestScore
             localStorage.setItem(PlayersDetails, value);
-            window.alert("Your previous BestScore of " + TotalScore[1] + " was higher. BestScore does not change.");
+            window.alert(" Your previous BestScore of " + TotalScore[1] + " was higher. BestScore does not change.");
             break; 
 
         } else { // New entry all together
             localStorage.setItem(PlayersDetails, value);
-            window.alert("Your score of " + BestScore + " has been submitted!")
+            window.alert(" Your score of " + BestScore + " has been submitted! ")
             break;
         }
                 
