@@ -270,7 +270,7 @@ BeginQuizBtnEl.addEventListener("click", function() {
                 } 
                 else {
                     // code for wrong answer
-                    console.log("Inside the case now");
+                    console.log("Wrong");
                     booleanvalue.style.display="";
                     booleanvalue.textContent = "Wrong!";
                     booleanvalue.style.borderTop = "solid #663399";
@@ -291,7 +291,7 @@ BeginQuizBtnEl.addEventListener("click", function() {
                 } 
                 else {
                     // code for wrong answer
-                    console.log("Inside the case now");
+                    console.log("Wrong");
                     booleanvalue.style.display="";
                     booleanvalue.textContent = "Wrong!";
                     booleanvalue.style.borderTop = "solid #663399";
@@ -333,7 +333,7 @@ BeginQuizBtnEl.addEventListener("click", function() {
                 } 
                 else {
                     // code for wrong answer
-                    console.log("Inside the case now");
+                    console.log("Wrong");
                     booleanvalue.style.display="";
                     booleanvalue.textContent = "Wrong!";
                     booleanvalue.style.borderTop = "solid #663399";
