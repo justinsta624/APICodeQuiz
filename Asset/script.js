@@ -145,7 +145,7 @@ SubmitEl.addEventListener("click", function() { // Submit the best scores
         // add to the storage if the current BestScore is higher, 
         // else let the user know they already have the BestScore
             localStorage.setItem(PlayersDetails, value);
-            window.alert(BestScore + " "+ "is the latest entry for user initial" + Initialtext.value + ". Entry will not be added.")
+            window.alert(BestScore + " "+ "is the latest score by " + Initialtext.value + ". BestScore does not change.")
             break; 
         } else if (Initialtext.value == "") {
             window.alert("Please enter the initial");
@@ -158,7 +158,7 @@ SubmitEl.addEventListener("click", function() { // Submit the best scores
         } else if (PlayersDetails == TotalScore[0] && BestScore < TotalScore[1] ) { 
             // Current < Previous BestScore
             localStorage.setItem(PlayersDetails, value);
-            window.alert("Your previous BestScore of " + TotalScore[1] + " was higher. Entry will not be added.");
+            window.alert("Your previous BestScore of " + TotalScore[1] + " was higher. BestScore does not change.");
             break; 
 
         } else { // New entry all together
